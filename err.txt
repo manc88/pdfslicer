@@ -1,4 +1,0 @@
-TEST
-Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
-	at Slicer.getResultSequence(Slicer.java:137)
-	at Slicer.main(Slicer.java:93)
