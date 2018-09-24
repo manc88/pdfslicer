@@ -1,9 +1,8 @@
-./out
-
-./in
-
+.out
+/
+.in/
 
 .
-/err.txt
+err.txt
 
-./res.pdf
+.res.pdf
