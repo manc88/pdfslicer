@@ -1,5 +1,9 @@
-/out
-/in
+./out
 
-err.txt
-res.pdf
+./in
+
+
+.
+/err.txt
+
+./res.pdf
