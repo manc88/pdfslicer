@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="pdfbox:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/pdfbox_jar</output-path>
+    <root id="archive" name="pdfbox.jar">
+      <element id="module-output" name="pdfbox" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/pdflib/xmpbox-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/pdflib/preflight-app-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/pdflib/preflight-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/pdflib/fontbox-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/pdflib/pdfbox-app-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/src/pdflib/pdfbox-tools-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/pdfbox_jar/pdfbox.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/production/pdfbox/pdflib/xmpbox-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/production/pdfbox/pdflib/pdfbox-app-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/production/pdfbox/pdflib/fontbox-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/production/pdfbox/pdflib/pdfbox-tools-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/production/pdfbox/pdflib/preflight-app-2.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/production/pdfbox/pdflib/preflight-2.0.7.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
