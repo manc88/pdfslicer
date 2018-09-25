@@ -1,8 +1,3 @@
-/**
- * Created by m.zvonov on 31.07.2017.
- */
-
-
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
