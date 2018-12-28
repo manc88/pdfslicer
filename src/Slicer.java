@@ -1,4 +1,3 @@
-
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
@@ -18,33 +17,30 @@ import java.util.regex.Pattern;
 public class Slicer {
 
 
-    public static final String COMMAND_KEY_WORD = "COMMAND";
-    public static final String INVALID_ARGUMENTS = "Invalid args!";
-    public static final String RESULT_KEY_WORD = "RESULT";
-    public static final String FILE_KEY_WORD = "FILE";
-    public static final String RESULT_SEQUENCE_SEPARATOR = "\\+";
-    public static final String FILE_ALIAS_SEPARATOR = "=";
-    public static final String COMMAND_MIX = "MIX";
-    public static final String OUT_KEY_WORD = "OUT";
-    public static final String COMMAND_ADD_TEXT_PAGE = "ADDINFOPAGE";
-    public static final String ADD_TEXT_KEYWORD = "STRTEXT";
-    public static final String POSITION_KEYWORD = "POS";
+    private static final String COMMAND_KEY_WORD = "COMMAND";
+    private static final String INVALID_ARGUMENTS = "Invalid args!";
+    private static final String RESULT_KEY_WORD = "RESULT";
+    private static final String FILE_KEY_WORD = "FILE";
+    private static final String RESULT_SEQUENCE_SEPARATOR = "\\+";
+    private static final String FILE_ALIAS_SEPARATOR = "=";
+    private static final String COMMAND_MIX = "MIX";
+    private static final String OUT_KEY_WORD = "OUT";
+    private static final String COMMAND_ADD_TEXT_PAGE = "ADDINFOPAGE";
+    private static final String ADD_TEXT_KEYWORD = "STRTEXT";
 
 
     static{
         try {
             System.setErr(new PrintStream(new File("err.txt")));
+            System.setOut(new PrintStream(new File("stacktrace.txt")));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
     }
 
-    public static void main (String args[]) throws IOException {
-
-        //example  /command mix /file A=test.pdf /file B=logo.pdf /Result=A[1:1]+B[1:2]+A[2:4]+B[2] /out res.pdf
-
-        // /command ADDINFOPAGE /file A=D:\\Projects\\pdfbox\\src\\cad.pdf  /STRTEXT=fuckingtest  /POS=1 /out D:\\Projects\\pdfbox\\src\\res.pdf
+    //command mix /file A=test.pdf /file B=logo.pdf /Result=A[1:1]+B[1:1]+A[2:4]+B[2:2] /out=res.pdf
+    public static void main (String[] args) {
 
         if(args.length<1){ System.out.println(INVALID_ARGUMENTS);return; }
 
@@ -55,17 +51,13 @@ public class Slicer {
         }
 
         String command = sb.toString();
-
-        //command = "/command ADDINFOPAGE /file A=cad.pdf  /STRTEXT тест1 /STRTEXT тест2 /POS=2 /out res.pdf";
-
-        String commandArgs[] = command.split("/");
+        String[] commandArgs = command.split("/");
 
         HashMap<String,PDDocument> files = new HashMap<>();
         String action = null;
         String out = null;
         ResultPart[] resSequence = null;
         ArrayList<String> text= new ArrayList<>();
-        int pos = 0;
 
         for(String word:commandArgs){
 
@@ -74,11 +66,19 @@ public class Slicer {
             }
             if(word.toUpperCase().contains(FILE_KEY_WORD)){
 
-                String fileParam[] = word.split(FILE_ALIAS_SEPARATOR);
+                String[] fileParam = word.split(FILE_ALIAS_SEPARATOR);
                 if(fileParam.length!=2){System.out.println(INVALID_ARGUMENTS);return;}
                 String fAlias = fileParam[0].replace("file","").trim();
                 String fName = fileParam[1].trim();
-                files.put(fAlias,PDDocument.load(new File(fName)));
+
+                try {
+                    files.put(fAlias,PDDocument.load(new File(fName)));
+                } catch (IOException e) {
+                    System.err.println(String.format("Error loading file: %s", fName));
+                    e.printStackTrace();
+                    return;
+                }
+
             }
 
             if(word.toUpperCase().contains(RESULT_KEY_WORD)){
@@ -92,10 +92,6 @@ public class Slicer {
             if(word.toUpperCase().contains(ADD_TEXT_KEYWORD)){
                 text.add(word.split("=")[1]);
             }
-            if(word.toUpperCase().contains(POSITION_KEYWORD)){
-
-                pos = Integer.valueOf(word.split("=")[1].trim());
-            }
 
 
         }
@@ -107,31 +103,24 @@ public class Slicer {
                     mix(files,resSequence,out);
                 }
                 else{
-                    System.err.println("Not enough params for mix");
+                    System.err.println(INVALID_ARGUMENTS);
                 }
                 break;
             case COMMAND_ADD_TEXT_PAGE:
-                if (out!=null && !files.isEmpty() && !text.equals("")){
-                    add_text_page(files,text,pos,out);
-                }
-                else{
-                    System.err.println("Not enough params for add text page");
-                }
                 break;
         }
 
     }
 
-    //Result A[1]+B[1]+A[2:4]+B[2]
+    //Result=A[1:1]+B[1:1]+A[2:4]+B[2:2]
     //
-    public static ResultPart[] getResultSequence(String resultToken){
+    private static ResultPart[] getResultSequence(String resultToken){
 
         String resultTemplate = resultToken.split("=")[1].trim().replaceAll(" +", " ");
-        String arrayPages[] = resultTemplate.split(RESULT_SEQUENCE_SEPARATOR);
-        ResultPart res[] = new ResultPart[arrayPages.length];
+        String[] arrayPages = resultTemplate.split(RESULT_SEQUENCE_SEPARATOR);
+        ResultPart[] res = new ResultPart[arrayPages.length];
         for(int i=0;i<arrayPages.length;i++){
 
-           // String fileAlias = pagePart.re
             Pattern p = Pattern.compile("(.*)\\[(.*):(.*)\\]");
             Matcher m = p.matcher(arrayPages[i]);
             m.matches();
@@ -143,9 +132,8 @@ public class Slicer {
 
     }
 
-    public static boolean mix(HashMap<String,PDDocument> files, ResultPart[] resSequence, String resultFileNAme){
+    private static boolean mix(HashMap<String,PDDocument> files, ResultPart[] resSequence, String resultFileNAme){
 
-        //
         PDDocument doc = new PDDocument();
         ResultSlicer rs = new ResultSlicer(files);
         boolean ret = false;
@@ -163,16 +151,17 @@ public class Slicer {
 
     }
 
+    @Deprecated
     public static boolean add_text_page(HashMap<String,PDDocument> files, ArrayList<String> text, int pagePosition, String resultFileNAme ){
 
         for(PDDocument doc:files.values()){
 
-            PDPage newpage = new PDPage();
+            PDPage newPage = new PDPage();
             PDPageTree allPages = doc.getDocumentCatalog().getPages();
-            allPages.insertBefore(newpage,doc.getPage(pagePosition-1));
+            allPages.insertBefore(newPage,doc.getPage(pagePosition-1));
             try {
                 PDType0Font font = PDType0Font.load(doc, new File("C:\\Windows\\Fonts\\Arial.ttf"));
-                PDPageContentStream contentStream = new PDPageContentStream(doc, newpage);
+                PDPageContentStream contentStream = new PDPageContentStream(doc, newPage);
 
                 contentStream.beginText();
                 //contentStream.setFont(PDType1Font.COURIER_BOLD, 20);
@@ -195,9 +184,7 @@ public class Slicer {
                 e.printStackTrace();
             }
 
-
         }
-
 
         return true;
     }
