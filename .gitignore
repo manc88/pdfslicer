@@ -4,3 +4,7 @@
 .err.txt
 
 .res.pdf
+
+./.idea
+
+.stacktrace.txt
