@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddd94e61-c21c-4bb4-b60f-dcb71a6b9ed1" name="Default" comment="reborn 02">
-      <change beforePath="$PROJECT_DIR$/src/main/java/pdfSlicer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pdfSlicer/Slicer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Slicer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pdfSlicer/SlicerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SlicerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,11 +43,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SlicerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-814">
-              <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+            <state relative-caret-position="213">
+              <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -99,11 +109,11 @@
         <option value="$PROJECT_DIR$/src/main/java/pdfSlicer/ResultPart.java" />
         <option value="$PROJECT_DIR$/src/main/java/pdfSlicer/ResultSlicer.java" />
         <option value="$PROJECT_DIR$/src/main/java/pdfSlicer/Main.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pdfSlicer/Slicer.java" />
         <option value="$PROJECT_DIR$/src/main/java/pdfSlicer/SlicerTest.java" />
         <option value="$PROJECT_DIR$/slicer/src/SlicerTest.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -181,24 +191,6 @@
             <path>
               <item name="pdfslicer" type="b2602c69:ProjectViewProjectNode" />
               <item name="pdfslicer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdfslicer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdfslicer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdfslicer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdfslicer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pdfslicer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pdfslicer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pdfslicer" type="b2602c69:ProjectViewProjectNode" />
@@ -397,16 +389,24 @@
       <option name="project" value="LOCAL" />
       <updated>1546199357206</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="reborn 02">
+      <created>1546199616656</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1546199616656</updated>
+    </task>
+    <task id="LOCAL-00005" summary="reborn 02">
+      <created>1546199682721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1546199682721</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_pdfbox - 2018.12.30 at 22h 29m 42s.xml">
-      <configuration name="All in pdfbox" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_pdfbox_(3) - 2018.12.30 at 22h 29m 59s.xml">
-      <configuration name="All in pdfbox (3)" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="All_in_pdfbox_(4) - 2018.12.30 at 22h 30m 10s.xml">
       <configuration name="All in pdfbox (4)" configurationId="JUnit" />
     </history-entry>
@@ -431,6 +431,12 @@
     <history-entry file="All_in_pdfbox_(2) - 2018.12.30 at 22h 49m 03s.xml">
       <configuration name="All in pdfbox (2)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_pdfbox - 2018.12.30 at 22h 53m 23s.xml">
+      <configuration name="All in pdfbox" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_pdfbox_(3) - 2018.12.30 at 22h 54m 30s.xml">
+      <configuration name="All in pdfbox (3)" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -443,6 +449,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49919224" visible="true" weight="0.26865673" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -613,13 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pdfSlicer/ResultSlicer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -659,8 +659,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SlicerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-814">
-          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        <state relative-caret-position="213">
+          <caret line="47" column="21" lean-forward="true" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
