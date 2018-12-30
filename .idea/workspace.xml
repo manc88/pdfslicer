@@ -266,7 +266,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in pdfbox">
+  <component name="RunManager" selected="JUnit.All in pdfbox (3)">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -307,7 +307,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in pdfbox (4)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in pdfbox (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pdfbox" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -349,19 +349,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in pdfbox (4)" />
       <item itemvalue="JUnit.All in pdfbox (5)" />
       <item itemvalue="JUnit.All in pdfbox (1)" />
       <item itemvalue="JUnit.All in pdfbox (2)" />
       <item itemvalue="JUnit.All in pdfbox" />
+      <item itemvalue="JUnit.All in pdfbox (3)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in pdfbox (3)" />
         <item itemvalue="JUnit.All in pdfbox" />
         <item itemvalue="JUnit.All in pdfbox (2)" />
         <item itemvalue="JUnit.All in pdfbox (1)" />
         <item itemvalue="JUnit.All in pdfbox (5)" />
-        <item itemvalue="JUnit.All in pdfbox (4)" />
       </list>
     </recent_temporary>
   </component>
