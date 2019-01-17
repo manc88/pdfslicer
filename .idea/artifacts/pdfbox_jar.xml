@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="pdfbox:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/pdfbox_jar</output-path>
-    <root id="archive" name="pdfbox.jar">
-      <element id="module-output" name="pdfbox" />
-    </root>
-  </artifact>
-</component>

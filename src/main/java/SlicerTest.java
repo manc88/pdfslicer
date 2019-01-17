@@ -36,12 +36,12 @@ public class SlicerTest {
                 files,
                 "Result=F0[1:-1]+F1[1:-1]"
                 },
-               {
-                        "data\\expResult1.pdf",
-                       "data\\testRes1.pdf",
-                       files,
-                       "Result=F2[1:1]+F3[1:1]"
-               }
+                {
+                "data\\expResult1.pdf",
+                "data\\testRes1.pdf",
+                files,
+                "Result=F2[1:1]+F3[1:1]"
+                }
            });
     }
 
